@@ -20,27 +20,25 @@ class ChatItem extends StatelessWidget {
       spacing: 12,
       children: [
         CircleAvatar(radius: 26, backgroundImage: NetworkImage(image)),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 4,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF1B1B2A),
-                ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 4,
+          children: [
+            Text(
+              name,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF1B1B2A),
               ),
-              Text(
-                message,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 14, color: Color(0xFF5B5E72)),
-              ),
-            ],
-          ),
+            ),
+            Text(
+              message,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 14, color: Color(0xFF5B5E72)),
+            ),
+          ],
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
