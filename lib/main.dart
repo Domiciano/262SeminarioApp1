@@ -5,6 +5,7 @@ import 'package:mi_app_1/components/primary_button.dart';
 import 'package:mi_app_1/components/profile_info.dart';
 import 'package:mi_app_1/components/secondary_button.dart';
 import 'package:mi_app_1/components/stats_row.dart';
+import 'package:mi_app_1/screens/profile_screen.dart';
 
 void main() {
   runApp(const App());
@@ -21,8 +22,8 @@ class App extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/home',
-      routes: {'/home': (context) => HomeScreen()},
+      initialRoute: '/profile',
+      routes: {'/profile': (context) => ProfileScreen()},
     );
   }
 }

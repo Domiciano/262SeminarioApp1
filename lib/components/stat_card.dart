@@ -16,20 +16,26 @@ class StatCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         side: BorderSide(color: Color(0xFFA9B1F0), width: 1.0),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        spacing: 6,
-        children: [
-          Text(
-            value,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF1B1B2A),
+      child: Padding(
+        padding: EdgeInsets.all(8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 6,
+          children: [
+            Text(
+              value,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1B1B2A),
+              ),
             ),
-          ),
-          Text(label, style: TextStyle(fontSize: 13, color: Color(0xFF5B5E72))),
-        ],
+            Text(
+              label,
+              style: TextStyle(fontSize: 13, color: Color(0xFF5B5E72)),
+            ),
+          ],
+        ),
       ),
     );
   }

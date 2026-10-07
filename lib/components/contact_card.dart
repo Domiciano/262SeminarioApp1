@@ -22,24 +22,27 @@ class ContactCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         side: const BorderSide(color: Color(0xFFDCDDE6), width: 1.5),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        spacing: 4,
-        children: [
-          CircleAvatar(radius: 28, backgroundImage: NetworkImage(image)),
-          Text(
-            name,
-            style: const TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFF1B1B2A),
+      child: Padding(
+        padding: EdgeInsets.all(8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 4,
+          children: [
+            CircleAvatar(radius: 28, backgroundImage: NetworkImage(image)),
+            Text(
+              name,
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF1B1B2A),
+              ),
             ),
-          ),
-          Text(
-            '@$username',
-            style: const TextStyle(fontSize: 13, color: Color(0xFF5B5E72)),
-          ),
-        ],
+            Text(
+              '@$username',
+              style: const TextStyle(fontSize: 13, color: Color(0xFF5B5E72)),
+            ),
+          ],
+        ),
       ),
     );
   }
