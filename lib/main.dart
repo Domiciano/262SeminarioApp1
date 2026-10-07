@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mi_app_1/components/chat_item.dart';
+import 'package:mi_app_1/components/contact_card.dart';
+import 'package:mi_app_1/components/primary_button.dart';
+import 'package:mi_app_1/components/profile_info.dart';
+import 'package:mi_app_1/components/secondary_button.dart';
+import 'package:mi_app_1/components/stats_row.dart';
 
 void main() {
   runApp(const App());
@@ -35,43 +41,31 @@ class HomeScreen extends StatelessWidget {
           Text("Beta"),
           Text("Gamma"),
           Text("Delta"),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 8,
-            children: [
-              StatCard(value: 404, label: "Seguidores"),
-              StatCard(value: 10, label: "Seguidos"),
-              StatCard(value: 47, label: "Post"),
-            ],
+          StatsRow(posts: '128', followers: '2.4k', following: '310'),
+          PrimaryButton(label: 'Iniciar sesión', icon: Icons.login),
+          SecondaryButton(label: 'Crear cuenta', icon: Icons.person_add_alt),
+          ChatItem(
+            image: 'https://picsum.photos/400',
+            name: 'Javier Montes',
+            message:
+                '¿Te parece si revisamos los pendientes del proyecto mañana temprano?',
+            time: '10:24 a.m.',
+          ),
+          ProfileInfo(
+            image: 'https://picsum.photos/400',
+            name: 'Mariana Valenzuela',
+            username: 'marianav',
+            role: 'Diseñadora de Producto',
+            email: 'm.val@estudio.com',
+            location: 'Madrid, ES',
+          ),
+          ContactCard(
+            image: 'https://picsum.photos/400',
+            name: 'Ana Torres',
+            username: 'anatorres',
           ),
         ],
       ),
-    );
-  }
-}
-
-//StatCard
-class StatCard extends StatelessWidget {
-  //Variables
-  final int value;
-  final String label;
-  //Constructor
-  StatCard({required this.value, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          "$value",
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          ),
-        ),
-        Text(label),
-      ],
     );
   }
 }
